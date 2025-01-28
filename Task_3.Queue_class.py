@@ -16,13 +16,13 @@ class Queue:
 
     def start_peek(self):
         if not self.is_empty():
-            return self.items[-1]
+            return self.items[0]
         else:
             raise IndexError('Очередь пуста.')
 
     def finish_peek(self):
         if not self.is_empty():
-            return self.items[0]
+            return self.items[-1]
         else:
             raise IndexError('Очередь пуста.')
 
