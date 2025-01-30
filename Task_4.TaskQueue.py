@@ -3,7 +3,7 @@ class TaskQueue:
         self.tasks = []
 
     def is_empty(self):
-        return len(self.tasks) == 0
+        return not self.tasks
 
     def add_task(self, task):
         self.tasks.append(task)
