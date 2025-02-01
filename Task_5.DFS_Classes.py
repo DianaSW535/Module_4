@@ -17,10 +17,10 @@ class Graph:
 
     def dfs(self, node, visited = None):
         if visited is None:
-            visited = set()
+            visited = []
         if node in visited:
             return visited
-        visited.add(node)
+        visited.append(node)
         for next_node in node.outbound:
             self.dfs(next_node, visited)
         return visited
