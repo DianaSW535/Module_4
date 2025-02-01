@@ -1,6 +1,7 @@
 class Node:
     def __init__(self, value):
         self.value = value
+        
         self.outbound = []
         self.inbound = []
 
@@ -13,7 +14,7 @@ class Node:
 
 class Graph:
     def __init__(self, root):
-        self.root = root
+        self._root = root
 
     def dfs(self, node, visited = None):
         if visited is None:
@@ -24,6 +25,11 @@ class Graph:
         for next_node in node.outbound:
             self.dfs(next_node, visited)
         return visited
+
+    @property
+    def root(self):
+        return self._root
+
 
 a = Node('a')
 b = Node('b')
