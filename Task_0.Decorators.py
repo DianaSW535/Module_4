@@ -1,4 +1,3 @@
-# декораторы задание 1
 from datetime import datetime
 import requests
 
@@ -27,7 +26,6 @@ def request():
 print(*request())
 
 
-# задание 2
 def requires_admin(func):
     def wrapper(user, *args, **kwargs):
         if user['role'] == 'admin':
@@ -48,5 +46,5 @@ admin_user = {'username': 'Alice', 'role': 'admin'}
 regular_user = {'username': 'Bob', 'role': 'user'}
 
 
-print(delete_user(admin_user, 'Charlie'))  # Должно отработать
-print(delete_user(regular_user, 'Charlie'))  # Должно рейзить PermissionError
+print(delete_user(admin_user, 'Charlie'))
+print(delete_user(regular_user, 'Charlie'))
